@@ -1,5 +1,6 @@
 <h1>レッツケツドラム</h1>
 <div id='timer'></div>
+<div >猫の満足度：</div>
 <div class="counter">0</div>
 <button class="ass" type="button">猫ケツ</button>
 <script>
@@ -27,7 +28,9 @@
       if (timeLeft <= 0) {
         clearInterval(timer); // タイマーを停止
         // タイムアップ時の処理をここに追加
-        timerElement.textContent = 'しゅ〜りょ〜';
+        const count = document.querySelector('.counter').textContent;
+        sessionStorage.setItem('count', count);
+        location.pathname = '/result';
       } else {
         timerElement.textContent = `残り時間： ${timeLeft}秒`;
         timeLeft--;
