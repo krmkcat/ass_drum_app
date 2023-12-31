@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'staticpages#top'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -8,4 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root 'static_pages#top'
+  get '/how_to_play', to: 'static_pages#how_to_play', as: 'how_to_play'
+  get '/play_game', to: 'games#play_game', as: 'play_game'
+  get '/result', to: 'games#result', as: 'result'
 end
