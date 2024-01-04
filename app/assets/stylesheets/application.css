@@ -13,7 +13,17 @@
  *= require_tree .
  *= require_self
  */
+.container {
+  width: 800px;
+}
 
+.title {
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+}
 .ass:active {
   position: relative;
   bottom: -10px;
