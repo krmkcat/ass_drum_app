@@ -1,10 +1,11 @@
-<h1>結果発表〜！</h1>
-<div>まんぞく度：<p class="score"></p></div>
-<p>
-<%= link_to 'Xでシェア', '#' %>
-</p>
-<script>
-  const count = sessionStorage.getItem('count');
-  const score = document.querySelector('.score');
-  score.textContent = count
-</script>
+<div class="container">
+  <div class="title">
+    <h1>結果発表〜！</h1>
+  </div>
+  <div class="content">
+    <p>
+      まんぞく度：<span class="score"></span>
+    </p>
+    <%= javascript_include_tag 'result' %>
+  </div>
+</div>

@@ -1,43 +1,13 @@
-<h1>レッツケツドラム</h1>
-<div id='timer'></div>
-<div >猫の満足度：</div>
-<div class="counter">0</div>
-<button class="ass" type="button">猫ケツ</button>
-<script>
-  const ass = document.querySelector('.ass');
-  ass.addEventListener('click', function () {
-    if (timerElement.textContent !== 'しゅ〜りょ〜') {
-      const counter = document.querySelector('.counter');
-      counter.textContent = parseInt(counter.textContent) + 1;
-    }
-  });
-
-  // ここから下はタイマーのコード
-  const totalTime = 10;
-
-  // タイマーの更新間隔（ミリ秒）
-  const updateInterval = 1000;
-
-  // タイマー表示用の要素を取得
-  const timerElement = document.querySelector('#timer');
-
-  // タイマーを開始する関数を定義
-  function startTimer() {
-    let timeLeft = totalTime;
-    const timer = setInterval(function() {
-      if (timeLeft <= 0) {
-        clearInterval(timer); // タイマーを停止
-        // タイムアップ時の処理をここに追加
-        const count = document.querySelector('.counter').textContent;
-        sessionStorage.setItem('count', count);
-        location.pathname = '/result';
-      } else {
-        timerElement.textContent = `残り時間： ${timeLeft}秒`;
-        timeLeft--;
-      }
-    }, updateInterval);
-  }
-
-  // タイマーを開始
-  startTimer();
-</script>
+<div class="container">
+  <div class="title">
+    <h1>レッツケツドラム</h1>
+  </div>
+  <div class="content">
+    <button type="button" id="start-button">スタート！</button>
+    <p>たたいた回数：
+      <span class="counter">0</span>
+    </p>
+    <%= image_tag 'cat_ass.jpg', class: 'ass', width: 300 %>
+    <%= javascript_include_tag 'play_game' %>
+  </div>
+</div>
